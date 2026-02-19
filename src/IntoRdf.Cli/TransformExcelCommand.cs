@@ -99,7 +99,8 @@ internal class TransformExcelCommand : Command<TransformExcelSettings>
         }
         catch (Exception ex)
         {
-            Console.WriteLine(ex.Message);
+            Console.Error.WriteLine(ex.Message);
+            return -1;
         }
 
         return 0;

@@ -130,8 +130,7 @@ internal class ExcelDomReaderService : IExcelDomReaderService
         var sheets = book
             .Descendants<Sheet>();
 
-        var sheet = sheets
-            .FirstOrDefault(s => s.Name?.ToString()?.Contains(sheetName) ?? false);
+        var sheet = sheets.FirstOrDefault(s => string.Equals(s.Name, sheetName, StringComparison.OrdinalIgnoreCase));
 
         //Handling nullable warning for GetPartById
         var sheetId = String.Empty;

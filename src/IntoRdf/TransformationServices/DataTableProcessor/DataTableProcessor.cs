@@ -72,11 +72,6 @@ internal class DataTableProcessor : IDataTableProcessor
                 return null;
             }
 
-            if (ContainsId(alreadyProcessedData, idUri))
-            {
-                var msg = $"'{details.IdentifierTargetPathSegment.Target}' was specified to be a unique id column, but duplicate: '{data}' found";
-                throw new IntoRdfException(msg);
-            }
             return idUri;
         }
     }
