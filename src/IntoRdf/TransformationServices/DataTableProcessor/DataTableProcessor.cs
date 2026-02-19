@@ -72,10 +72,6 @@ internal class DataTableProcessor : IDataTableProcessor
                 return null;
             }
 
-            if (ContainsId(alreadyProcessedData, idUri))
-            {
-                return null;
-            }
             return idUri;
         }
     }
